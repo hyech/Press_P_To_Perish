@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Platform.tscn" type="PackedScene" id=1]
+
+[sub_resource type="Gradient" id=1]
+colors = PoolColorArray( 0.262745, 1, 0.811765, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[node name="Node2D" type="Node2D"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 512, 300 )
+scale = Vector2( 0.5, 600 )
+texture = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Floor" parent="." instance=ExtResource( 1 )]
+position = Vector2( 512, 592 )
+scale = Vector2( 4, 1 )
+
+[node name="Platform" parent="." instance=ExtResource( 1 )]
+position = Vector2( 512, 8 )
+scale = Vector2( 4, 1 )
+
+[node name="LeftWall" parent="." instance=ExtResource( 1 )]
+position = Vector2( 8, 296 )
+rotation = 1.5708
+scale = Vector2( 2.3, 1 )
+
+[node name="RightWall" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1016, 296 )
+rotation = 1.5708
+scale = Vector2( 2.3, 1 )
